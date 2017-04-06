@@ -1,10 +1,5 @@
 <h1>
   {{title}}
 </h1>
-<div *ngFor="let todo of todos; trackBy:trackTodoItem">
-  <h4>{{todo.id}} {{todo.item}} has been {{todo.status ? "done" : "not done"}}</h4>
-</div>
-<input type="text" #item>
-<input type="checkbox" #status>
-<button (click)="addTodoItem(item.value, status.checked); item.value=''"></button>
+<router-outlet></router-outlet>
 
