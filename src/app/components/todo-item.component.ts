@@ -1,4 +1,5 @@
 import {Component, Input} from "@angular/core";
+import {StorageService} from "../storage.service";
 import {TodoItem} from "../classes/todoItem";
 
 @Component({
@@ -8,6 +9,13 @@ import {TodoItem} from "../classes/todoItem";
 })
 
 export class TodoItemComponent{
+  @Input() todoItem: any;
 
-  constructor() {}
+  constructor(private storageService: StorageService) {}
+
+  deleteTodoItem(todoItem: TodoItem): void {
+    this.storageService.deleteItem(todoItem);
+  }
+
+
 }

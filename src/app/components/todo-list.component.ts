@@ -24,14 +24,6 @@ export class TodoListComponent implements OnInit {
     this.storageService.setTodos(this.todos);
   };
 
-  deleteTodoItem(todoItem: TodoItem): void {
-    let index: number = this.todos.indexOf(todoItem);
-    if (index !== -1) {
-      this.todos.splice(index, 1);
-    }
-    this.storageService.setTodos(this.todos);
-  };
-
   trackTodoItem(index, todoItem) {
     return todoItem.id;
   };

@@ -1,9 +1,5 @@
 <div class="todo-list">
-  <div class="todo-container" *ngFor="let todo of todos; trackBy:trackTodoItem">
-    <a class="row-item" (click)="deleteTodoItem(todo)">xxxx</a>
-    <h4 class="row-item">{{todo.id}} {{todo.item}} has been {{todo.status ? "done" : "not done"}}</h4>
-    <todo-item></todo-item>
-  </div>
+  <todo-item *ngFor="let todo of todos" [todoItem]="todo"></todo-item>
   <div class="todo-adder">
     <input type="text" #item class="text-box">
     <input type="checkbox" #status class="check-box">

@@ -21,6 +21,9 @@ export class StorageService {
 
   // Useless atm (need to take/set each time)
   deleteItem(item: TodoItem): void {
-    localStorage.setItem("todos", JSON.stringify(this.todos));
+    let index: number = this.todos.indexOf(item);
+    if (index !== -1) {
+      this.todos.splice(index, 1);
+    }
   }
 }
