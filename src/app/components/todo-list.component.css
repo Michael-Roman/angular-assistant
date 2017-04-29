@@ -1,0 +1,19 @@
+.reg-button{
+  width: 5em;
+  height: 2em;
+}
+.todo-list{
+}
+.todo-container{
+  display: block;
+  overflow: hidden;
+}
+.row-item{
+  display: inline-block;
+}
+.clear{
+  clear: both;
+}
+.todo-adder{
+  clear: both;
+}

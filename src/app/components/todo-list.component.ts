@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TodoItem} from "../todoItem";
+import {TodoItem} from "../classes/todoItem";
 import {StorageService} from "../storage.service";
 
 @Component({
@@ -36,3 +36,6 @@ export class TodoListComponent implements OnInit {
     return todoItem.id;
   };
 }
+/* Still left to fix
+* 1: Make task name require Characters.
+* 2: HTML anc css reworks*/

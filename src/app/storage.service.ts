@@ -1,5 +1,5 @@
 
-import {TodoItem} from "./todoItem";
+import {TodoItem} from "./classes/todoItem";
 import {Injectable} from "@angular/core";
 
 @Injectable()
@@ -12,9 +12,15 @@ export class StorageService {
 
   //Gets the locally stored Todos, if not exist, returns defaults
   getTodos(): TodoItem[] {
-    let localString = localStorage.getItem("todos");
-    console.log(JSON.parse(localStorage.getItem("todos")));
-    return (localString ? JSON.parse(localStorage.getItem("todos")) : this.todos);
+    try {
+      let localString = localStorage.getItem("todos");
+      console.log(JSON.parse(localStorage.getItem("todos")));
+      return (localString ? JSON.parse(localStorage.getItem("todos")) : this.todos);
+    } catch (e) {
+      console.log("Something went wrong with loading");
+      return this.todos;
+    }
+
   }
 
   setTodos(todos: TodoItem[]): void {
